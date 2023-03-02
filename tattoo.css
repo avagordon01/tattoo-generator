@@ -1,0 +1,25 @@
+body {
+    font-family: ;
+}
+h3 {
+    margin: 0;
+    font-size: 0.8em;
+
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.controls {
+    display: inline-block;
+    width: 320px;
+}
+canvas {
+    display: inline-block;
+    width: 400px;
+    border: 1px solid #000;
+}
+.force {
+    background-color= grey;
+    margin: 5px;
+}
