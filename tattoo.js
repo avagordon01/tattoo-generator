@@ -1,13 +1,6 @@
-var ctx;
-
-canvas = document.querySelector("canvas")
-
-let x = document.getElementById("canvas").style.width;
-let y = document.getElementById("canvas").style.height;
-
-    canvas = document.querySelector("canvas")
-    ctx = canvas.getContext("2d");
-    ctx.font = "12px monospace";
+let canvas = document.querySelector("canvas")
+let ctx = canvas.getContext("2d");
+ctx.font = "12px monospace";
 
 function resizeWidth(value) {
     document.getElementById("canvas").style.width=value;
@@ -23,8 +16,10 @@ function resizeHeight(value) {
 
 
 function redraw() {
-    let x = document.getElementById("canvas").style.width / 12
-    let y = document.getElementById("canvas").style.height / 12
+    let x = document.getElementById("canvas").width / 12
+    console.log(x);
+    let y = document.getElementById("canvas").height / 12
+    console.log(y);
     for (let i = 0; i < x; i++) {
         for (let n = 0; n < y; n++) {
             ctx.fillText("#", i*12, n*12);
@@ -33,3 +28,19 @@ function redraw() {
 }
 
 redraw();
+
+const fileUpload = document.querySelector('input[type=file]');
+const file = fileUpload.files[0];
+const img = new Image();
+img.addEventListener(
+  "load",
+  () => {
+    console.log("loaded")
+  },
+  false
+);
+img.src = file;
+
+function updateImage() {
+    canvas.drawImage();
+}
